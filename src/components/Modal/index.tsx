@@ -49,7 +49,7 @@ const Modal = ({ isOpen, onClose, props }: ModalProps) => {
         </button>
         <div className={styles.pokemonData}>
           <div className={styles.pokemonImg}>
-            <Image
+            <img
               src={imgUrl}
               alt={props.pokemon.name}
               className={styles.pokemonImg}
@@ -93,7 +93,7 @@ const Modal = ({ isOpen, onClose, props }: ModalProps) => {
         </div>
 
         <div className={styles.divider}>
-          <Image src={Pokeball} alt="logo" />
+          <Image src={Pokeball} alt="logo" width={56} height={56} />
         </div>
         <div className={styles.pokemonStats}>
           <span className={styles.statsTitle}>Stats</span>

@@ -1,0 +1,22 @@
+.container {
+  padding: 12.5rem 0 2.5rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 12.5rem;
+  column-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

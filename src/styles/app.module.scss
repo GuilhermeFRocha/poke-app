@@ -1,0 +1,9 @@
+.app-container {
+  background-color: #ffffff;
+  color: #1e1e22;
+
+  &.dark-mode {
+    background-color: #1e1e22;
+    color: #ffffff;
+  }
+}

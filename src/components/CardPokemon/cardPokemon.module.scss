@@ -1,0 +1,272 @@
+$fire-color: #ff9900;
+$fighting-color: #ff215b;
+$flying-color: #89bdff;
+$water-color: #14a8ff;
+$poison-color: #f149ff;
+$electric-color: #aba502;
+$steel-color: #23a1bd;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-image: initial;
+  border-bottom: none;
+  border-radius: 1.5rem;
+  padding-top: 7rem;
+  position: relative;
+  animation: fadeDown 0.8s;
+
+  &.fire {
+    background-color: #ff990066;
+  }
+
+  &.water {
+    background-color: #14a8ff66;
+  }
+
+  &.electric {
+    background-color: #aba50266;
+  }
+}
+
+.cardOverlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  z-index: -1;
+  backface-visibility: hidden;
+  transform: translate3d(0px, 0px, 0px);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 12.5rem;
+    height: 12.5rem;
+    background: #1cd80e;
+    filter: blur(128px);
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.8s ease 0s;
+  }
+}
+
+.pokemonNumber {
+  font-size: 1.25rem;
+  line-height: 135%;
+  font-weight: 700;
+}
+
+.pokemonType {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  text-transform: capitalize;
+
+  button {
+    cursor: default;
+  }
+
+  &.fire {
+    background-color: $fire-color;
+  }
+  
+  &.fighting {
+    background-color: $fighting-color;
+  }
+  
+  &.flying {
+    background-color: $flying-color;
+  }
+  
+  &.water {
+    background-color: $water-color;
+  }
+  
+  &.poison {
+    background-color: $poison-color;
+  }
+  
+  &.electric {
+    background-color: $electric-color;
+  }
+  
+  &.steel {
+    background-color: $steel-color;
+  }
+}
+
+.pokemonName {
+  font-size: 2rem;
+  line-height: 135%;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  display: block;
+  margin: 0.25rem 0.5rem 0.75rem;
+}
+
+.pokemonFeatures {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0px 2rem;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.pokemonWeight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  span {
+    font-size: 1rem;
+    line-height: 150%;
+    font-weight: 400;
+  }
+}
+
+.pokemonHeight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  span {
+    font-size: 1rem;
+    line-height: 150%;
+    font-weight: 400;
+  }
+}
+
+.pokemonImg {
+  position: absolute;
+  top: -10.5rem;
+  width: 15rem !important;
+  height: 15rem !important;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2) rotateY(5deg);
+    filter: drop-shadow(0px 22px 8px #0000004d);
+  }
+}
+
+.moreDetailsButton {
+  color: #1e1e22;
+  border: none;
+  width: calc(100% + 2px);
+  height: 3rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 700;
+  cursor: pointer;
+
+  &.fire {
+    background-color: $fire-color;
+  }
+  
+  &.fighting {
+    background-color: $fighting-color;
+  }
+  
+  &.flying {
+    background-color: $flying-color;
+  }
+  
+  &.water {
+    background-color: $water-color;
+  }
+  
+  &.poison {
+    background-color: $poison-color;
+  }
+  
+  &.electric {
+    background-color: $electric-color;
+  }
+  
+  &.steel {
+    background-color: $steel-color;
+  }
+  
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+}
+
+.pokemonDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.skeletonLoading {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-image: linear-gradient(90deg,
+      #24293f 0px,
+      #060b28 50%,
+      #24293f 100%);
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate3d 2s linear infinite;
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: translate(-50%, -50%) rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate3d(0, 0, 1, 360deg);
+  }
+}

@@ -1,0 +1,69 @@
+.headerContainer {
+  max-width: 78rem;
+  padding: 0px 1rem;
+  margin: 0px auto;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+// SwitchButton.module.scss
+
+
+
+.switch-button {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 4px;
+  margin-left: 10px;
+  /* Adapte a margem conforme necessário */
+  cursor: pointer;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.slider {
+      background-color: #2196f3;
+      /* Cor quando o switch está ativado - pode ser personalizado */
+    }
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 4px;
+    transition: 0.4s;
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: 32px - 8px;
+      width: 32px - 8px;
+      left: 4px;
+      bottom: 4px;
+      background-color: #fff;
+      /* Cor do círculo deslizante - pode ser personalizado */
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+  }
+
+  &.checked {
+    .slider {
+      background-color: #4caf50;
+      /* Cor quando o switch está ativado - pode ser personalizado */
+
+      &:before {
+        transform: translateX(32px - 4px);
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.tabsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 50px;
+  margin-inline: auto;
+  max-width: 600px;
+  padding: 0px 1rem;
+}
+
+.divider {
+  flex: 1;
+  height: 1px;
+  background-color: #a3a3a3;
+}
+
+.tab {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 10px;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-color: #7e7e7e;
+
+  & > img {
+    width: 50%;
+  }
+}
+
+.tabContent {
+  margin-top: 10px;
+  max-width: 78rem;
+  padding: 0px 1rem;
+  margin: 0px auto;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 220px);
+}
+
+.pokeball img {
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
